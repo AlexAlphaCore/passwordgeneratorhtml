@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generador de Contraseñas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url("https://media.istockphoto.com/id/1363430976/photo/password-online-form-cyber-security-concept-image.webp?b=1&s=170667a&w=0&k=20&c=I_2d_2g19BTYJ3jSjofAeDYZ3zyleWjfIQLAnFxsk1s=");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #b4afaf;
+        }
+
+        h3 {
+            color: rgb(163, 163, 163);
+        }
+
+        .password-container {
+            margin-top: 20px;
+        }
+
+        .password-input {
+            width: 300px;
+            height: 30px;
+            font-size: 14px;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .generate-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .generate-button:hover {
+            background-color: #ff0000;
+        }
+    </style>
+    <script>
+        function generarContraseña() {
+            var caracteres =
+                'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}[]|:;"<>,.?/';
+            var longitud = 12;
+            var contraseña = '';
+            for (var i = 0; i < longitud; i++) {
+                var indice = Math.floor(Math.random() * caracteres.length);
+                contraseña += caracteres.charAt(indice);
+            }
+            document.getElementById('contraseña').value = contraseña;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Generador de Contraseñas</h1>
+    <div class="password-container">
+        <button class="generate-button" onclick="generarContraseña()">Generar Contraseña</button>
+        <br>
+        <input type="text" id="contraseña" class="password-input" readonly>
+    </div>
+</body>
+
+<body>
+    <h3>Made By Alex Lorenzo (2023)</h3>
+
+</body>
+
+</html>
